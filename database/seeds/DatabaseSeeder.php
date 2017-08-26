@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Models\Member;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,5 +13,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
+        Member::query()->insert([
+            'name' => "backend",
+            'email' => "null@null.com",
+            'password' => "ts3esport_secret",
+        ]);
     }
 }
