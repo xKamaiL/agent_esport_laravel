@@ -18,22 +18,25 @@
                         </tr>
                         </thead>
                         <tbody>
+                        @foreach($List as $data)
                             <tr>
-                                <th scope="row" class="text-center">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
+                                <th scope="row" class="text-center">{{ $data->id }}</th>
+                                <td>{{ $data->name }}</td>
+                                <td>{{ $data->facebook }}</td>
                                 <td>
                                     <div style="max-width: 80%">
-                                        <button class="btn btn-block btn-primary btn-sm" onclick="return view(1)"><i class="fa fa-eye"></i> Info</button>
+                                        <button class="btn btn-block btn-primary btn-sm" onclick="return view({{ $data->id }})"><i class="fa fa-eye"></i> Info</button>
                                     </div>
                                 </td>
                             </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
     </div>
+    @include('frontend.home.modal')
 @endsection
 @push('js')
     <script>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ListMerchants;
 use Illuminate\Http\Request;
+use Psy\Util\Json;
 
 class HomeController extends Controller
 {
@@ -22,5 +23,20 @@ class HomeController extends Controller
     {
             $List = ListMerchants::query()->get();
         return view('frontend.home.index', compact('List'));
+    }
+    public function view($id){
+        $app = ListMerchants::query()->where("id","=",$id)->first();
+        if($app->count() != 0){
+            return json_encode([
+                "id" => $id,
+                "name" => $app->name,
+                "facebook" => $app->facebook,
+                "address" => $app->address,
+                "number" => $app->number,
+                "picture" => $app->picture
+            ]);
+        }else{
+
+        }
     }
 }

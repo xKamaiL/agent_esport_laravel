@@ -5,10 +5,10 @@
             <div class="row">
                 <div class="col-lg-12">
 
-                        <h4 class="card-title">รายชื่อทั้งหมด [BACKEND]
-                            <a class="btn btn-primary btn-sm" href="{{ url("/home") }}"><i class="fa fa-home"></i> Home</a><button data-toggle="modal" data-target="#" class="btn btn-warning btn-sm"><i class="fa fa-dashboard"></i> Create</button>
+                    <h4 class="card-title">รายชื่อทั้งหมด [BACKEND]
+                        <a class="btn btn-primary btn-sm" href="{{ url("/home") }}"><i class="fa fa-home"></i> Home</a><button data-toggle="modal" data-target="#create" class="btn btn-warning btn-sm"><i class="fa fa-dashboard"></i> Create</button>
 
-                        </h4>
+                    </h4>
                     <hr>
                 </div>
                 <div class="col-lg-12">
@@ -33,7 +33,7 @@
                                     </div>
                                 </td>
                             </tr>
-                            @endforeach
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -41,6 +41,7 @@
         </div>
     </div>
     @include('backend.home.model')
+    @include('backend.home.create')
 @endsection
 @push('js')
     <script>

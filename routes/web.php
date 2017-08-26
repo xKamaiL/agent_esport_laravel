@@ -14,7 +14,7 @@
 
 Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
-Route::get('/view', 'HomeController@index');
+Route::get('/view/{id}', 'HomeController@view');
 
 Route::get('/login', 'Auth\LoginController@index');
 Route::post('/login', 'Auth\LoginController@postLogin')->name("login");
@@ -22,7 +22,7 @@ Route::post('/login', 'Auth\LoginController@postLogin')->name("login");
 
 Route::middleware('auth')->group(function () {
     Route::get('/backend', 'BackendController@index')->name("backend");
-    Route::get('/backend/edit', 'BackendController@view')->name("backend.edit");
+    Route::post('/backend/edit', 'BackendController@edit')->name("backend.edit");
     Route::post('/backend/add', 'BackendController@add')->name("backend.add");
     Route::get('/backend/remove/{id}', 'BackendController@remove')->name("backend.remove");
 });

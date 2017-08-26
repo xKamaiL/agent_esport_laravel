@@ -1,5 +1,11 @@
 function view(id){
-    $.get( $url, function( data ) {
-        alert( "Load was performed." );
+    var $modal = $("#view_m");
+    $.get( $url + "/" + id, function( data ) {
+        $modal.modal();
+        $(".view-img").attr("src",data.picture);
+        $(".view-name").val(data.name);
+        $(".view-address").val(data.address);
+        $(".view-number").val(data.number);
+        $(".view-facebook").val(data.facebook);
     },'json');
 }

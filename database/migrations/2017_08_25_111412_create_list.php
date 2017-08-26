@@ -19,7 +19,8 @@ class CreateList extends Migration
             $blueprint->string("name","255");
             $blueprint->longText("picture");
             $blueprint->longText("address");
-            $blueprint->integer("number")->length("10");
+            $blueprint->string("facebook");
+            $blueprint->mediumInteger("number");
             $blueprint->timestamps();
         });
     }
