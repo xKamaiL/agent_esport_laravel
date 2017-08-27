@@ -11,7 +11,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                             <center>
-                                <img src="" class="img-circle view-img" style="border-radius: 10%;" width="350" height="200">
+								<img src="" class="img-circle view-img" style="border-radius: 10%;" width="350" height="200">
+                                <img src="" class="img-circle view-img" style="border-radius: 10%;" width="250" height="200">
                                 <hr>
                             </center>
                             <div class="form-group">
