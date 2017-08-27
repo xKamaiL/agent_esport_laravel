@@ -35,8 +35,20 @@ class BackendController extends Controller
         }else{
             return redirect()->back()->withInput()->with('alert', 'No Picture!');
         }
+        if ($request->hasFile('personal')) {
+            $destinationPath = '/uploads/personal/';
+            $fileName        = time().'.'.$request->file('personal')->getClientOriginalExtension();
+            $request->file('personal')->move(public_path($destinationPath), $fileName);
+            if(!is_dir(public_path($destinationPath))) {
+                mkdir($destinationPath);
+            }
+            $image_personal = url($destinationPath.$fileName);
+        }else{
+            return redirect()->back()->withInput()->with('alert', 'No Picture!');
+        }
         ListMerchants::query()->insert([
             "name" => $input['name'],
+            "personal" => $image_personal,
             "picture" => $image,
             "address" => $input['address'],
             "facebook" => $input['facebook'],

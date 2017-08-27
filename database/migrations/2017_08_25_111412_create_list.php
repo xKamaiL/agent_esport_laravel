@@ -17,6 +17,7 @@ class CreateList extends Migration
         Schema::create('list', function(Blueprint $blueprint){
             $blueprint->increments("id");
             $blueprint->string("name","255");
+            $blueprint->longText("personal");
             $blueprint->longText("picture");
             $blueprint->longText("address");
             $blueprint->string("facebook");

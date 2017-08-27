@@ -22,6 +22,10 @@
                                 <input type="file" name="picture" class="form-control" accept="image/*" required>
                             </div>
                             <div class="form-group">
+                                <label>บัตรประชาชน</label>
+                                <input type="file" name="personal" class="form-control" accept="image/*" required>
+                            </div>
+                            <div class="form-group">
                                 <label>ที่อยู่</label>
                                 <textarea name="address" rows="3" class="form-control" required></textarea>
                             </div>

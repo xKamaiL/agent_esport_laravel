@@ -29,6 +29,7 @@ class HomeController extends Controller
         if($app->count() != 0){
             return json_encode([
                 "id" => $id,
+                "personal" => $app->personal,
                 "name" => $app->name,
                 "facebook" => $app->facebook,
                 "address" => $app->address,

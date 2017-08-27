@@ -1,12 +1,11 @@
 @extends('frontend.layouts.app')
 @section('content')
-    <div class="card">
+    <div class="card card-transparent">
+        <div class="card-header">
+            <i class="fa fa-lg fa-list"></i> รายชื่อทั้งหมด
+        </div>
         <div class="card-body">
             <div class="row">
-                <div class="col-lg-12">
-                    <h4 class="card-title">รายชื่อทั้งหมด</h4>
-                    <hr>
-                </div>
                 <div class="col-lg-12">
                     <table class="table table-bordered table-responsive datatable table-sm">
                         <thead>
@@ -25,7 +24,7 @@
                                 <td>{{ $data->facebook }}</td>
                                 <td>
                                     <div style="max-width: 80%">
-                                        <button class="btn btn-block btn-primary btn-sm" onclick="return view({{ $data->id }})"><i class="fa fa-eye"></i> Info</button>
+                                        <button class="btn btn-block btn-outline-warning btn-sm" onclick="return view({{ $data->id }})"><i class="fa fa-eye"></i> Info</button>
                                     </div>
                                 </td>
                             </tr>
